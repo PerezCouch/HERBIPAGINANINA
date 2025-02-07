@@ -1,0 +1,245 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 15%;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    height: 70px;
+}
+
+.logo-footer {
+    height: 10%;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    margin-right: 30px;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+}
+
+.nav li a:hover {
+    text-decoration: underline;
+}
+
+.nav li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 3px;
+    width: 100%;
+    background-color: #4CAF50;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.iconwsp, .iconig, .iconface {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30%;
+    background-color: #d6d5d5;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.iconwsp:hover {
+    background-color: #37975c;
+    color: white;
+}
+
+.iconwsp img, .iconig img, .iconface img {
+    width: 20px;
+    height: 20px;
+}
+
+.iconig:hover {
+    background-color: #b9315a;
+    color: white;
+}
+
+.iconface:hover {
+    background-color: #374997;
+    color: white;
+}
+
+#face {
+    width: 25px;
+    height: 25px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px; /* Ajustar según sea necesario */
+}
+
+.main-content{
+    margin-bottom: 100px;
+}
+.catalogo{
+    display: flex;
+    margin: 10px 15%;
+}
+
+.filters {
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+    padding: 15px;
+    max-width: 250px;
+    max-height: 450px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+#category{
+    width: 220px;
+}
+#marca{
+    width: 220px;
+}
+
+.filters input,
+.filters select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+h2 {
+    margin-top: 50px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 200px;
+    max-height: 300px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.product-name {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #2E7D32;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #333;
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-form, .footer-info, .footer-map {
+    width: 30%;
+}
+
+.footer-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-form input, .footer-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-form button {
+    padding: 10px;
+    background: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.footer-info h3 {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-form, .footer-info, .footer-map {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}

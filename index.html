@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header de Tienda con Banners Rotatorios</title>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdvHdu6ksaRriH5rg7eel0iQt-2fByFhFQmQ&s" alt="Logo de la empresa">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="aboutus.html">Nosotros</a></li>
+                <li><a href="catalogo.html">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="#" class="iconwsp"><img src="https://static-00.iconduck.com/assets.00/whatsapp-icon-254x256-vxfbrccp.png" alt="WhatsApp"></a>
+            <a href="#" class="iconig"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="Instagram"></a>
+            <a href="#" class="iconface"><img id="face" src="https://static.wixstatic.com/media/0e29b2_94f2579799d944bc8e36490030b0ea34~mv2.png/v1/fill/w_360,h_358,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Contacto_FACEBOOK%20VACANTE.png" alt="Facebook"></a>
+        </div>
+    </header>
+    
+    <div class="main-section">
+        <div class="carousel">
+            <button class="prev">&#9665;</button>
+            <div class="carousel-images">
+                <div class="slide1">Imagen 1</div>
+                <div class="slide2">Imagen 2</div>
+                <div class="slide3">Imagen 3</div>
+            </div>
+            <button class="next">&#9655;</button>
+        </div>
+        <div class="indicators">
+            <div class="indicator active" data-index="0"></div>
+            <div class="indicator" data-index="1"></div>
+            <div class="indicator" data-index="2"></div>
+        </div>
+    </div>
+
+    <div class="brand-section">
+        <h2>Nuestras Marcas</h2>
+        <div class="brands">
+            <div class="brand">
+                <img src="https://lh6.googleusercontent.com/proxy/NUjNoKMhXAoJxwuYocIz0B6X9OEee3HKk7cD860A0aRr7rO6D9njnKqvaenjKmT54TcSfsry3M5v3DyavF9PEH2nFp6SC37aFaInKDxO6tJlWbLgpKwTKvt8Hg" alt="Marca 1">
+            </div>
+            <div class="brand">
+                <img src="https://cdn.shopify.com/s/files/1/0259/6253/files/the-strokes-logo_12550aa6-8cbd-47e6-9908-5f2f9559ce19.png?v=1598298015" alt="Marca 3">
+            </div>
+            <div class="brand">
+                <img src="https://static.wikia.nocookie.net/logopedia/images/6/6b/McColin%27s_logo.png/revision/latest?cb=20240721222736&path-prefix=es" alt="Marca 4">
+            </div>
+        </div>
+    </div>
+
+    <div class="productos">
+        <div id="herbi-carousel" class="carousel">
+            <h3>Productos Herbi</h3>
+            <div class="carousel-items">
+                <!-- Los productos de Herbi se insertarán aquí dinámicamente -->
+            </div>
+        </div>
+        <div id="rapidin-carousel" class="carousel">
+            <h3>Productos Rapidin</h3>
+            <div class="carousel-items">
+                <!-- Los productos de Rapidin se insertarán aquí dinámicamente -->
+            </div>
+        </div>
+        <div id="villa-carousel" class="carousel">
+            <h3>Productos De'Villa</h3>
+            <div class="carousel-items">
+                <!-- Los productos de De'Villa se insertarán aquí dinámicamente -->
+            </div>
+        </div>
+        <div class="view-more">
+            <a href="catalogo.html">Ver más productos</a>
+        </div>
+    </div>   
+        
+        <div class="responsive-container-block bigContainer">
+            <div class="responsive-container-block Container">
+              <img class="mainImg" src="https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2015/11/486087-record-herbie-original-subastado-81000-euros.jpg?tf=3840x">
+              <div class="allText aboveText">
+                <p class="text-blk headingText">
+                  Sobre Nosotros
+                </p>
+                <p class="text-blk description">
+                    Es vender la mayor cantidad de filtrantes del planeta y poder convencer a nina de casarse conmigo
+                </p>
+              </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="logo-footer">
+                <a href="index.html">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdvHdu6ksaRriH5rg7eel0iQt-2fByFhFQmQ&s" alt="Logo de la empresa">
+                </a>
+            </div>
+            <div class="footer-info">
+                <h3>Nombre de la Empresa</h3>
+                <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad, País</p>
+                <p><strong>Teléfono:</strong> +123 456 7890</p>
+                <p><strong>Email:</strong> contacto@empresa.com</p>
+                <p><strong>Horario:</strong> Lunes - Viernes: 9:00 AM - 6:00 PM</p>
+                <div class="social-icons">
+                    <a href="#" class="iconwsp"><img src="https://static-00.iconduck.com/assets.00/whatsapp-icon-254x256-vxfbrccp.png" alt="WhatsApp"></a>
+                    <a href="#" class="iconig"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="Instagram"></a>
+                    <a href="#" class="iconface"><img id="face" src="https://static.wixstatic.com/media/0e29b2_94f2579799d944bc8e36490030b0ea34~mv2.png/v1/fill/w_360,h_358,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Contacto_FACEBOOK%20VACANTE.png" alt="Facebook"></a>
+                </div>
+            </div>
+            <div class="footer-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1738609420346!6m8!1m7!1sEfbLiUkueuB3uFBL_wY0dA!2m2!1d-12.10772567097593!2d-76.94464160768456!3f103.45923341363175!4f1.3128395845751157!5f0.7820865974627469" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nombre de la Empresa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="productos.js"></script>
+
+    <script>
+        const imagesContainer = document.querySelector('.carousel-images');
+        const images = document.querySelectorAll('.carousel-images div');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        const indicators = document.querySelectorAll('.indicator');
+        let index = 0;
+        let interval;
+
+        function updateCarousel() {
+            imagesContainer.style.transform = `translateX(-${index * 100}vw)`;
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+            prevButton.style.display = index === 0 ? 'block' : 'block';
+            nextButton.style.display = index === images.length - 1 ? 'block' : 'block';
+        }
+
+        function nextSlide() {
+            index = (index + 1) % images.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            index = (index - 1 + images.length) % images.length;
+            updateCarousel();
+        }
+
+        function startAutoSlide() {
+            interval = setInterval(nextSlide, 3000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(interval);
+        }
+
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', (e) => {
+                index = parseInt(e.target.dataset.index);
+                updateCarousel();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+        });
+
+        prevButton.addEventListener('click', () => {
+            prevSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+
+        nextButton.addEventListener('click', () => {
+            nextSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+
+        startAutoSlide();
+        updateCarousel();
+    </script>
+    <script>
+        function populateCarousel(marca) {
+            const filteredProducts = productos.filter(product => product.marca === marca);
+            const carouselContainer = document.getElementById(`${marca}-carousel`).querySelector('.carousel-items');
+            carouselContainer.innerHTML = "";
+            
+            filteredProducts.forEach(product => {
+                const productElement = document.createElement("div");
+                productElement.classList.add("carousel-item");
+                productElement.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="carousel-image">
+                    <h4>${product.name}</h4>
+                    <p>$${product.price}</p>
+                `;
+                carouselContainer.appendChild(productElement);
+            });
+        }
+    
+        // Cargar los productos en los carruseles al cargar la página
+        window.onload = function() {
+            populateCarousel("herbi");
+            populateCarousel("rapidin");
+            populateCarousel("villa");
+        }
+    </script>
+</body>
+</html>
