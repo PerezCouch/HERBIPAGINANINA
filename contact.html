@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Responsive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 15%;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+        }
+
+        .logo img {
+            height: 70px;
+        }
+
+        .nav-container {
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background: #f8f8f8;
+            text-align: center;
+            padding: 10px 50px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease-in-out;
+        }
+
+        .nav-container.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .nav {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav li {
+            margin: 15px 0;
+        }
+        .nav li a:hover {
+    text-decoration: underline;
+}
+        .nav li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 18px;
+            position: relative; /* Añadir esta línea */
+        }
+
+        .nav li a.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            height: 3px;
+            width: 100%;
+            background-color: #4CAF50;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .iconwsp, .iconig, .iconface {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30%;
+            background-color: #d6d5d5;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .iconwsp:hover { background-color: #37975c; color: white; }
+        .iconig:hover { background-color: #b9315a; color: white; }
+        .iconface:hover { background-color: #374997; color: white; }
+
+        .iconwsp img, .iconig img, .iconface img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .menu-toggle {
+            display: block;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        @media screen and (min-width: 769px) {
+            .menu-toggle { 
+                display: none; 
+            }
+            .nav-container { 
+                visibility: visible; 
+                opacity: 1; 
+                position: static; 
+                background: none; 
+                box-shadow: none;
+                display: flex; 
+                justify-content: space-between; 
+                align-items: center;
+            }
+            .nav { 
+                flex-direction: row; 
+            }
+            .nav li { 
+                margin-right: 30px; 
+            }
+            .social-icons { 
+                margin-top: 0; 
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdvHdu6ksaRriH5rg7eel0iQt-2fByFhFQmQ&s" alt="Logo de la empresa">
+            </a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="nav-container">
+            <ul class="nav">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="aboutus.html">Nosotros</a></li>
+                <li><a href="catalogo.html">Productos</a></li>
+                <li><a href="#" class="active">Contacto</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#" class="iconwsp"><img src="https://static-00.iconduck.com/assets.00/whatsapp-icon-254x256-vxfbrccp.png" alt="WhatsApp"></a>
+                <a href="#" class="iconig"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="Instagram"></a>
+                <a href="#" class="iconface"><img id="face" src="https://static.wixstatic.com/media/0e29b2_94f2579799d944bc8e36490030b0ea34~mv2.png" alt="Facebook"></a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-container').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

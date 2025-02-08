@@ -13,27 +13,35 @@
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdvHdu6ksaRriH5rg7eel0iQt-2fByFhFQmQ&s" alt="Logo de la empresa">
             </a>
         </div>
-        <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="nav-container">
             <ul class="nav">
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html" >Inicio</a></li>
                 <li><a href="aboutus.html" class="active">Nosotros</a></li>
                 <li><a href="catalogo.html">Productos</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="aboutus.html">Contacto</a></li>
             </ul>
-        </nav>
-        <div class="social-icons">
-            <a href="#" class="iconwsp"><img src="https://static-00.iconduck.com/assets.00/whatsapp-icon-254x256-vxfbrccp.png" alt="WhatsApp"></a>
-            <a href="#" class="iconig"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="Instagram"></a>
-            <a href="#" class="iconface"><img id="face" src="https://static.wixstatic.com/media/0e29b2_94f2579799d944bc8e36490030b0ea34~mv2.png/v1/fill/w_360,h_358,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Contacto_FACEBOOK%20VACANTE.png" alt="Facebook"></a>
+            <div class="social-icons">
+                <a href="#" class="iconwsp"><img src="https://static-00.iconduck.com/assets.00/whatsapp-icon-254x256-vxfbrccp.png" alt="WhatsApp"></a>
+                <a href="#" class="iconig"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="Instagram"></a>
+                <a href="#" class="iconface"><img id="face" src="https://static.wixstatic.com/media/0e29b2_94f2579799d944bc8e36490030b0ea34~mv2.png" alt="Facebook"></a>
+            </div>
         </div>
     </header>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-container').classList.toggle('active');
+        }
+    </script>
+
     <header>
         <h1>Nuestra Historia</h1>
     </header>
     <section class="history">
         <div class="container">
             <div class="history2">
-                <img src="ruta-de-la-imagen.jpg" alt="Nuestra Historia">
+                <img src="https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2015/11/486087-record-herbie-original-subastado-81000-euros.jpg?tf=3840x" alt="Nuestra Historia">
                 <div class="text-block">
                     <p>Ayudamos a las personas a amar, sanar, entender y mover sus cuerpos, para que puedan ser humanos más felices y saludables.</p>
                     <p>Nuestra misión es lograr que la mayor cantidad de personas se muevan.</p>
@@ -48,7 +56,7 @@
                     <p>No solo personas que ya están en forma, sino todas las personas. Ofrecemos una alternativa más accesible y sostenible al popular mantra "Sin dolor, no hay ganancia".</p>
                     <p>No creemos que el ejercicio deba asociarse con el dolor en absoluto. Le da una mala reputación. El ejercicio es medicina. Cuando se hace correctamente, no solo alivia el dolor, sino que lo protege.</p>
                 </div>
-                <img src="ruta-de-la-imagen.jpg" alt="Nuestra Historia">
+                <img src="https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2015/11/486087-record-herbie-original-subastado-81000-euros.jpg?tf=3840x" alt="Nuestra Historia">
             </div>
         </div>
     </section>

@@ -2,43 +2,61 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 15%;
+    padding: 20px 15%;
     background-color: #f8f8f8;
     border-bottom: 1px solid #ddd;
+    position: relative;
 }
+
 .logo img {
     height: 70px;
 }
 
-.logo-footer {
-    height: 10%;
-    justify-content: center;
-    padding-top: 20px;
+.nav-container {
+    position: absolute;
+    top: 80px;
+    left: -10px;
+    width: 100%;
+    background: #f8f8f8;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s ease-in-out;
+}
+
+.nav-container.active {
+    visibility: visible;
+    opacity: 1;
 }
 
 .nav {
-    display: flex;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 .nav li {
-    margin-right: 30px;
+    margin: 15px 0;
+}
+.nav li a:hover {
+text-decoration: underline;
 }
 .nav li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
     font-size: 18px;
-    position: relative;
+    position: relative; /* Añadir esta línea */
 }
-.nav li a:hover {
-    text-decoration: underline;
-}
+
 .nav li a.active::after {
     content: '';
     position: absolute;
@@ -51,11 +69,12 @@ body {
 
 .social-icons {
     display: flex;
+    justify-content: center;
     gap: 10px;
-    justify-content: center;
+    margin-top: 10px;
 }
-/* Icono de redes sociales */
-.iconwsp {
+
+.iconwsp, .iconig, .iconface {
     width: 40px;
     height: 40px;
     display: flex;
@@ -65,57 +84,51 @@ body {
     background-color: #d6d5d5;
     transition: background-color 0.3s, color 0.3s;
 }
-.iconwsp:hover {
-    background-color: #37975c;
-    color: white;
-}
-.iconwsp img {
+
+.iconwsp:hover { background-color: #37975c; color: white; }
+.iconig:hover { background-color: #b9315a; color: white; }
+.iconface:hover { background-color: #374997; color: white; }
+
+.iconwsp img, .iconig img, .iconface img {
     width: 20px;
     height: 20px;
 }
 
-.iconig {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30%;
-    background-color: #d6d5d5;
-    transition: background-color 0.3s, color 0.3s;
-}
-.iconig:hover {
-    background-color: #b9315a;
-    color: white;
-}
-.iconig img {
-    width: 20px;
-    height: 20px;
+.menu-toggle {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
 }
 
-.iconface {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30%;
-    background-color: #d6d5d5;
-    transition: background-color 0.3s, color 0.3s;
-}
-.iconface:hover {
-    background-color: #374997;
-    color: white;
-}
-.iconface img {
-    width: 20px;
-    height: 20px;
+@media screen and (min-width: 769px) {
+    .menu-toggle { 
+        display: none; 
+    }
+    .nav-container { 
+        visibility: visible; 
+        opacity: 1; 
+        position: static; 
+        background: none; 
+        box-shadow: none;
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+    }
+    .nav { 
+        flex-direction: row; 
+    }
+    .nav li { 
+        margin-right: 30px; 
+    }
+    .social-icons { 
+        margin-top: 0; 
+    }
 }
 #face {
     width: 25px;
     height: 25px;
 }
-
 
 a {
     text-decoration: none;
@@ -123,7 +136,6 @@ a {
 }
 .main-section {
     position: relative;
-    overflow: hidden;
     width: 100%;
     height: 650px;
 }
@@ -320,21 +332,6 @@ a {
     margin: 0 0 0 0;
   }
   
-  .text-blk.subHeadingText {
-    color: rgb(102, 102, 102);
-    font-size: 25px;
-    line-height: 34px;
-    font-weight: 700;
-    padding-top: 0px;
-    padding-right: 10px;
-    padding-bottom: 0px;
-    padding-left: 10px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 15px;
-    margin-left: 0px;
-  }
-  
   .text-blk.description {
     font-size: 25px;
     line-height: 34px;
@@ -367,9 +364,6 @@ a {
     margin: 0 0 0 40px;
   }
   
-  .allText.bottomText {
-    margin: 0 40px 0 0;
-  }
 
   .brand-section {
     padding: 20px 12%;
@@ -455,4 +449,98 @@ footer {
         width: 100%;
         margin-bottom: 20px;
     }
+    .header{
+        padding: 5px;
+        margin: 5px;
+    }
+    .nav li {
+        margin-right: 20px;
+    }
+    .brand-section{
+        padding: 40px 5px;
+    }
+    .brand-section h2{
+        font-size: 25px;
+    }
+    .brand{
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        padding: 5px;
+    }
+    .brands{
+        margin: 5px;
+        padding: 5px;
+        align-items: center;
+    }
+    .brand img{
+        width: 80px;
+        height: 80px;
+    }
+    .carousel-item{
+        width: 120px;
+        height: 200px;
+    }
+    .productos{
+        margin: 10px;
+    }
+    .carousel-item h4{
+        font-size: 16px;
+    }
+    .carousel-item p{
+        margin: auto;
+    }
+    .productos h3{
+        margin: 1px;
+    }
+    .responsive-container-block.Container{
+        margin: 30px auto;
+    }
+    .responsive-container-block.Container img{
+        width: 350px;
+    }
+    .allText.aboveText {
+        margin: 0;
+    }
+    .text-blk.headingText {
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 34px;
+        color: rgb(51, 51, 51);
+        justify-content: center;
+        display: flex;
+        margin: 20px 5px;
+    }
+      
+      .allText {
+        width: 100%;
+      }
+      
+      .text-blk.description {
+        font-size: 25px;
+        line-height: 34px;
+        color: rgb(102, 102, 102);
+        text-align: justify;
+      }
+      .carousel-images div {
+        width: 100vw;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: white;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    .main-section {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 450px;
+    }
+    iframe{
+        width: 350px;
+    }
+    
 }
