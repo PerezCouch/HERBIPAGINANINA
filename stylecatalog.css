@@ -411,4 +411,7 @@ header {
         margin-top: -10px;
         margin-bottom: 5px;
     }
+    #order-options select{
+        width: 170px;
+    }
 }
