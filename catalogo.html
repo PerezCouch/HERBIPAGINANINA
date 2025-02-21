@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo de Productos</title>
-    <link href="stylecatalog.css" rel="stylesheet" type="text/css" media="all">
+    <title>Catálogo de Productos</title>
+    <link href="stylecatalog.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header class="header">
         <div class="logo">
             <a href="index.html">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdvHdu6ksaRriH5rg7eel0iQt-2fByFhFQmQ&s" alt="Logo de la empresa">
+                <img src="images/1.png" alt="Logo de la empresa">
             </a>
         </div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -19,7 +19,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="aboutus.html">Nosotros</a></li>
                 <li><a href="catalogo.html" class="active">Productos</a></li>
-                <li><a href="aboutus.html">Contacto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
             <div class="social-icons">
                 <a href="#" class="iconwsp"><img src="https://static-00.iconduck.com/assets.00/whatsapp-icon-254x256-vxfbrccp.png" alt="WhatsApp"></a>
@@ -28,22 +28,23 @@
             </div>
         </div>
     </header>
+
     <script>
         function toggleMenu() {
             document.querySelector('.nav-container').classList.toggle('active');
         }
     </script>
-
-    <header>
-        <h1>Nuestros Productos</h1>
-    </header>
-
     <main class="main-content">
+        <header>
+            <h1>Nuestros Productos</h1>
+            <div style="background-color: #d90700; height: 15px; margin: 60px -16px -30px -16px;"></div>
+        </header>
+
         <div class="catalogo">
             <div class="filters">
-                <h3>Busqueda:</h3>
+                <h3>Búsqueda:</h3>
                 <input type="text" id="search" placeholder="Buscar producto..." onkeyup="filterProducts()">
-                <h4>Categorias:</h4>
+                <h4>Categorías:</h4>
                 <select id="category" onchange="filterProducts()">
                     <option value="all">Todas las categorías</option>
                     <option value="filtrantes">Filtrantes</option>
@@ -57,13 +58,35 @@
                     <option value="rapidin">Rapidin</option>
                     <option value="villa">De'Villa</option>
                 </select>
+                <h4>Tamaño:</h4>
+                <select id="cant" onchange="filterProducts()">
+                    <option value="all">Todos los tamaños</option>
+                    <option value="25">Pequeño</option>
+                    <option value="100">Grande</option>
+                </select>
                 <h4>Precio:</h4>
                 <div class="price">
-                    <input type="number" id="minPrice" placeholder="Precio mínimo" oninput="filterProducts()">
-                    <input type="number" id="maxPrice" placeholder="Precio máximo" oninput="filterProducts()">
+                    <input type="number" id="minPrice" placeholder="Mínimo" oninput="filterProducts()">
+                    <input type="number" id="maxPrice" placeholder="Máximo" oninput="filterProducts()">
                 </div>
             </div>
-            <div id="products"></div>
+            <div class="prodcc">
+                <div class="product-header">
+                    <span id="product-count">Mostrando 0 productos</span>
+                    <div id="order-options">
+                        <label for="sort">Ordenar por:</label>
+                        <select id="sort" onchange="filterProducts()">
+                            <option value="price-asc">Precio: Menor a Mayor</option>
+                            <option value="price-desc">Precio: Mayor a Menor</option>
+                            <option value="name-asc">Nombre: A-Z</option>
+                            <option value="name-desc">Nombre: Z-A</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="products"></div>
+            </div>
+            
         </div>
     </main>
 
@@ -94,53 +117,64 @@
             <p>&copy; 2024 Nombre de la Empresa. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <!-- Importar productos.js -->
     <script src="productos.js"></script>
-
     <script>
-        // Aquí va el código para mostrar los productos en la página
         function displayProducts(filteredProducts) {
             const productsContainer = document.getElementById("products");
             productsContainer.innerHTML = "";
+            document.getElementById("product-count").textContent = `Mostrando ${filteredProducts.length} productos`;
+
             filteredProducts.forEach(product => {
                 const productElement = document.createElement("div");
                 productElement.classList.add("product");
                 productElement.innerHTML = `
                     <img src="${product.image}" alt="${product.name}" class="product-image">
                     <h3 class="product-name">${product.name}</h3>
-                    <p class="product-price">$${product.price}</p>
+                    <p class="product-price">S/ ${product.price}</p>
                 `;
                 productsContainer.appendChild(productElement);
             });
         }
 
-        // Función para filtrar productos
         function filterProducts() {
             const searchTerm = document.getElementById("search").value.toLowerCase();
             const selectedCategory = document.getElementById("category").value;
             const selectedMarca = document.getElementById("marca").value;
+            const selectedCant = document.getElementById("cant").value;
             const minPrice = parseFloat(document.getElementById("minPrice").value);
             const maxPrice = parseFloat(document.getElementById("maxPrice").value);
+            const sortOrder = document.getElementById("sort").value;
 
-            const filteredProducts = productos.filter(product => {
-                const matchesSearch = product.name.toLowerCase().includes(searchTerm);
-                const matchesCategory = selectedCategory === "all" || product.category === selectedCategory;
-                const matchesMarca = selectedMarca === "all" || product.marca === selectedMarca;
-                const matchesMinPrice = isNaN(minPrice) || product.price >= minPrice;
-                const matchesMaxPrice = isNaN(maxPrice) || product.price <= maxPrice;
-
-                return matchesSearch && matchesCategory && matchesMarca && matchesMinPrice && matchesMaxPrice;
+            let filteredProducts = productos.filter(product => {
+                return (
+                    product.name.toLowerCase().includes(searchTerm) &&
+                    (selectedCategory === "all" || product.category === selectedCategory) &&
+                    (selectedMarca === "all" || product.marca === selectedMarca) &&
+                    (selectedCant === "all" || product.cant == selectedCant) &&
+                    (isNaN(minPrice) || product.price >= minPrice) &&
+                    (isNaN(maxPrice) || product.price <= maxPrice)
+                );
             });
+
+            // Ordenar los productos según la opción seleccionada
+            if (sortOrder === "price-asc") {
+                filteredProducts.sort((a, b) => a.price - b.price);
+            } else if (sortOrder === "price-desc") {
+                filteredProducts.sort((a, b) => b.price - a.price);
+            } else if (sortOrder === "name-asc") {
+                filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (sortOrder === "name-desc") {
+                filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
+            }
 
             displayProducts(filteredProducts);
         }
 
-        // Cargar todos los productos al inicio
         window.onload = () => {
-            displayProducts(productos);
+            if (typeof productos !== "undefined") {
+                displayProducts(productos);
+            }
         };
     </script>
 </body>
 </html>
-
