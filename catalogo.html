@@ -94,7 +94,7 @@
         <div class="footer-container">
             <div class="logo-footer">
                 <a href="index.html">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdvHdu6ksaRriH5rg7eel0iQt-2fByFhFQmQ&s" alt="Logo de la empresa">
+                    <img src="images/2.png" style="height: 200px;" alt="Logo de la empresa">
                 </a>
             </div>
             <div class="footer-info">
@@ -169,6 +169,33 @@
 
             displayProducts(filteredProducts);
         }
+
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                category: params.get("category") || "all",
+                marca: params.get("marca") || "all",
+                cant: params.get("cant") || "all",
+                minPrice: params.get("minPrice") || "",
+                maxPrice: params.get("maxPrice") || ""
+            };
+        }
+
+        window.onload = () => {
+            const filters = getQueryParams();
+
+            // Aplicar valores a los selectores si están en la URL
+            document.getElementById("category").value = filters.category;
+            document.getElementById("marca").value = filters.marca;
+            document.getElementById("cant").value = filters.cant;
+            document.getElementById("minPrice").value = filters.minPrice;
+            document.getElementById("maxPrice").value = filters.maxPrice;
+
+            // Filtrar los productos según los valores obtenidos de la URL
+            if (typeof productos !== "undefined") {
+                filterProducts();
+            }
+        };
 
         window.onload = () => {
             if (typeof productos !== "undefined") {
