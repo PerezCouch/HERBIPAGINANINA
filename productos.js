@@ -42,6 +42,29 @@ const productos = [
     { name: "Sol De'Villa Cusco Clavo y Canela 12u", price: 5.00, category: "chocolates", marca: "villa", image: "images/products/DISPLAY CHOCOLATE 2 (1).png", cant: "25"},
 
     // Productos Rapidin
-    { name: "Detergente en Polvo Rapidin Limon 15kg", price: 1.4, category: "limpiadores", marca: "rapidin", image: "images/products/rapidin-limon.jpg", cant: "25"},
-    { name: "Detergente en Polvo Rapidin Lirio 15kg", price: 1.4, category: "limpiadores", marca: "rapidin", image: "images/products/rapidin-lirio.jpg", cant: "25"},
+    { name: "Crema Lavavajillas Rapidin Limon 1.2kg", price: 5.50, category: "limpiadores", marca: "rapidin", image: "images/products/19.png", cant: "25"},
+
+    { name: "Detergente en Polvo Rapidin Limon 15kg", price: 35.00, category: "limpiadores", marca: "rapidin", image: "images/products/1.png", cant: "100"},
+    { name: "Detergente en Polvo Rapidin Limon 1kg", price: 4.00, category: "limpiadores", marca: "rapidin", image: "images/products/2.png", cant: "25"},
+    { name: "Detergente en Polvo Rapidin Limon 150g", price: 1.4, category: "limpiadores", marca: "rapidin", image: "images/products/3.png", cant: "25"},
+
+    { name: "Detergente en Polvo Rapidin Rosas 15kg", price: 35.00, category: "limpiadores", marca: "rapidin", image: "images/products/4.png", cant: "100"},
+    { name: "Detergente en Polvo Rapidin Rosas 1kg", price: 4.00, category: "limpiadores", marca: "rapidin", image: "images/products/5.png", cant: "25"},
+    { name: "Detergente en Polvo Rapidin Rosas 150g", price: 1.4, category: "limpiadores", marca: "rapidin", image: "images/products/6.png", cant: "25"},
+
+    { name: "Detergente en Polvo Rapidin Lavanda 15kg", price: 35.00, category: "limpiadores", marca: "rapidin", image: "images/products/7.png", cant: "100"},
+    { name: "Detergente en Polvo Rapidin Lavanda 1kg", price: 4.00, category: "limpiadores", marca: "rapidin", image: "images/products/8.png", cant: "25"},
+    { name: "Detergente en Polvo Rapidin Lavanda 150g", price: 1.4, category: "limpiadores", marca: "rapidin", image: "images/products/9.png", cant: "25"},
+    
+    { name: "Detergente en Polvo Rapidin Floral 15kg", price: 35.00, category: "limpiadores", marca: "rapidin", image: "images/products/10.png", cant: "100"},
+    { name: "Detergente en Polvo Rapidin Floral 1kg", price: 4.00, category: "limpiadores", marca: "rapidin", image: "images/products/11.png", cant: "25"},
+    { name: "Detergente en Polvo Rapidin Floral 150g", price: 1.4, category: "limpiadores", marca: "rapidin", image: "images/products/12.png", cant: "25"},
+
+    { name: "Detergente en Polvo Rapidin Lirio 15kg", price: 35.00, category: "limpiadores", marca: "rapidin", image: "images/products/13.png", cant: "100"},
+    { name: "Detergente en Polvo Rapidin Lirio 1kg", price: 4.00, category: "limpiadores", marca: "rapidin", image: "images/products/14.png", cant: "25"},
+    { name: "Detergente en Polvo Rapidin Lirio 150g", price: 1.4, category: "limpiadores", marca: "rapidin", image: "images/products/15.png", cant: "25"},
+    
+    { name: "Detergente en Polvo Rapidin Jazmin 15kg", price: 35.00, category: "limpiadores", marca: "rapidin", image: "images/products/16.png", cant: "100"},
+    { name: "Detergente en Polvo Rapidin Jazmin 1kg", price: 4.00, category: "limpiadores", marca: "rapidin", image: "images/products/17.png", cant: "25"},
+    { name: "Detergente en Polvo Rapidin Jazmin 150g", price: 1.4, category: "limpiadores", marca: "rapidin", image: "images/products/18.png", cant: "25"},
 ];
